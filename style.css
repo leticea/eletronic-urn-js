@@ -15,6 +15,7 @@ body {
     width: 450px;
     height: 320px;
     background: linear-gradient(to right, #E8E8E8, #C1C1C1);
+    border: 2px solid #555;
 }
 
 .keyboard {
@@ -25,9 +26,10 @@ body {
 .keyboard--line {
     display: flex;
     justify-content: center;
+    align-items: flex-end;
 }
 
-.keyboard--button {
+.keyboard--btn {
     width: 70px;
     height: 40px;
     background-color: #000;
@@ -38,4 +40,25 @@ body {
     align-items: center;
     margin: 10px;
     cursor: pointer;
+    box-shadow: 3px 3px 0px #555;
+}
+
+.btn--white {
+    background-color: #fff;
+    color: #000;
+    font-size: 15px;
+}
+
+.btn--correct {
+    background-color: #F09046;
+    color: #000;
+    font-size: 15px;
+}
+
+.btn--confirm {
+    background-color: #48C079;
+    color: #000;
+    font-size: 15px;
+    width: 90px;
+    height: 50px;
 }
