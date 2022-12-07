@@ -5,7 +5,7 @@ let phases = [
         candidates: [
             {
                 number: '38111',
-                name: 'Fulano de Tal',
+                name: 'Pessoa Pássaro',
                 party: 'ABC',
                 photos: [
                     {url:'pessoa-passaro.png', subtitle: 'Vereador'}
@@ -13,7 +13,7 @@ let phases = [
             },
             {
                 number: '77222',
-                name: 'Beltrano da Silva',
+                name: 'Scroopy',
                 party: 'DEBUG',
                 photos: [
                     {url:'scroopy.png', subtitle: 'Vereador'}
@@ -27,7 +27,7 @@ let phases = [
         candidates: [
             {
                 number: '66',
-                name: 'Ciclano',
+                name: 'Rick',
                 party: 'ABC',
                 vice: 'Cic',
                 photos: [
@@ -37,7 +37,7 @@ let phases = [
             },
             {
                 number: '33',
-                name: 'Zulano',
+                name: 'Beth',
                 party: 'QUERY',
                 vice: 'Zul',
                 photos: [

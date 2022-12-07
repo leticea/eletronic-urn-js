@@ -48,7 +48,17 @@ function screenUpdate() {
         }
     });
 
-    console.log("Candidate", candidate);
+    if (candidate.length > 0) {
+
+        candidate = candidate[0];
+        yourVoteFor.style.display = 'block';
+        warning.style.display = 'block';
+        description.innerHTML = `Nome: ${candidate.name}<br/>Partido: ${candidate.party}`;
+
+        let photosHtml = '';
+
+        photos.innerHTML = photosHtml;
+    }
 };
 
 function clicked(num) {
