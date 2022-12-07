@@ -118,7 +118,7 @@ body {
     animation-iteration-count: infinite;
 }*/
 
-.informations {
+.description {
     flex: 1;
     line-height: 40px;
 }
