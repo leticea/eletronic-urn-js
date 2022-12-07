@@ -32,11 +32,13 @@ function phaseInit() {
     warning.style.display = 'none';
     photos.innerHTML = '';
     numbers.innerHTML = numberHtml;
-}
+};
 
 function screenUpdate() {
 
-}
+    let phase = phases[currentPhase];
+
+};
 
 function clicked(num) {
 
@@ -57,19 +59,19 @@ function clicked(num) {
 
             screenUpdate();
         }
-    }
-}
+    };
+};
 
 function empty() {
     alert("Clicou em branco");
-}
+};
 
 function correct() {
     alert("Clicou em corrige");
-}
+};
 
 function confirm() {
     alert("Clicou em confirma");
-}
+};
 
 phaseInit();
