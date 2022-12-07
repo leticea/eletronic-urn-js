@@ -3,6 +3,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .urn {
@@ -88,10 +89,21 @@ body {
     height: 50px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .numbers {
     height: 50px;
+}
+
+.number {
+    display: inline-block;
+    width: 30px;
+    height: 40px;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 40px;
+    font-size: 25px;
 }
 
 .informations {
