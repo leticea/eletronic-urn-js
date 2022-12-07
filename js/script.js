@@ -5,9 +5,11 @@ const warning = document.querySelector('.bottom-side');
 const photos = document.querySelector('.top-side-right');
 const numbers = document.querySelector('.numbers');
 
-const currentPhase = 0;
+let currentPhase = 0;
+let number = '';
 
-function phaseStart() {
+
+function phaseInit() {
 
     let phase = phases[currentPhase];
     let numberHtml = '';
@@ -22,11 +24,21 @@ function phaseStart() {
     warning.style.display = 'none';
     photos.innerHTML = '';
     numbers.innerHTML = numberHtml;
+}
+
+function screenUpdate() {
 
 }
 
 function clicked(num) {
-    alert("Clicou em "+num);
+
+    let numberElement = document.querySelector('.number.blink');
+
+    if (numberElement != null) {
+
+        numberElement.innerHTML = num;
+        number = `${number}${num}`;
+    }
 }
 
 function empty() {
@@ -41,4 +53,4 @@ function confirm() {
     alert("Clicou em confirma");
 }
 
-phaseStart();
+phaseInit();
