@@ -8,9 +8,9 @@ const numbers = document.querySelector('.numbers');
 let currentPhase = 0;
 let number = '';
 
-
 function phaseInit() {
 
+    number = '';
     let phase = phases[currentPhase];
     let numberHtml = '';
 
@@ -69,7 +69,6 @@ function screenUpdate() {
         yourVoteFor.style.display = 'block';
         warning.style.display = 'block';
         description.innerHTML = '<div class="big--warning blink">VOTO NULO</div>';
-
     }
 };
 
@@ -100,7 +99,8 @@ function empty() {
 };
 
 function correct() {
-    alert("Clicou em corrige");
+
+    phaseInit();
 };
 
 function confirm() {
