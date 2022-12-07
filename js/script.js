@@ -62,7 +62,14 @@ function screenUpdate() {
 
         for (let i in candidate.photos) {
 
-            photosHtml += `<div class="image"><img src="images/${candidate.photos[i].url}" alt="">${candidate.photos[i].subtitle}</div>`;
+            if (candidate.photos[i].small) {
+
+                photosHtml += `<div class="image small"><img src="images/${candidate.photos[i].url}" alt="">${candidate.photos[i].subtitle}</div>`;
+            
+            } else {
+
+                photosHtml += `<div class="image"><img src="images/${candidate.photos[i].url}" alt="">${candidate.photos[i].subtitle}</div>`;
+            }
         }
 
         images.innerHTML = photosHtml;
@@ -99,15 +106,13 @@ function clicked(num) {
 
 function empty() {
 
-    if (number === '') {
-        
-        blankVote = true;
+    blankVote = true;
 
-        yourVoteFor.style.display = 'block';
-        warning.style.display = 'block';
-        numbers.innerHTML = '';
-        description.innerHTML = '<div class="big--warning blink">VOTO EM BRANCO</div>';
-    }
+    yourVoteFor.style.display = 'block';
+    warning.style.display = 'block';
+    numbers.innerHTML = '';
+    description.innerHTML = '<div class="big--warning blink">VOTO EM BRANCO</div>';
+    images.innerHTML = '';
 };
 
 function correct() {
@@ -116,7 +121,33 @@ function correct() {
 };
 
 function confirm() {
-    alert("Clicou em confirma");
+
+    let phase = phases[currentPhase];
+    let confirmedVote = false;
+
+    if (blankVote === true) {
+
+        confirmedVote = true;
+        console.log("Confirmando como BRANCO...");
+
+    } else if (number.length === phase.numbers) {
+
+        confirmedVote = true;
+        console.log("Confirmando como "+number);
+    }
+
+    if (confirmedVote) {
+
+        currentPhase++;
+
+        if (phases[currentPhase] !== undefined) {
+            phaseInit();
+
+        } else {
+
+            document.querySelector('.screen').innerHTML = '<div class="bigger--warning blink">FIM!</div>';
+        }
+    }
 };
 
 phaseInit();
