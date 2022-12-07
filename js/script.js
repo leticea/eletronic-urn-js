@@ -5,6 +5,26 @@ const warning = document.querySelector('.bottom-side');
 const photos = document.querySelector('.top-side-right');
 const numbers = document.querySelector('.numbers');
 
+const currentPhase = 0;
+
+function phaseStart() {
+
+    let phase = phases[currentPhase];
+    let numberHtml = '';
+
+    for(let i = 0; i < phase.numbers; i++) {
+        numberHtml += '<div class="number"></div>';
+    };
+
+    yourVoteFor.style.display = 'none';
+    role.innerHTML = phase.title;
+    description.innerHTML = '';
+    warning.style.display = 'none';
+    photos.innerHTML = '';
+    numbers.innerHTML = numberHtml;
+
+}
+
 function clicked(num) {
     alert("Clicou em "+num);
 }
@@ -20,3 +40,5 @@ function correct() {
 function confirm() {
     alert("Clicou em confirma");
 }
+
+phaseStart();
