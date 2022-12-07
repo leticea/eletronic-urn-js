@@ -38,6 +38,17 @@ function screenUpdate() {
 
     let phase = phases[currentPhase];
 
+    let candidate = phase.candidates.filter((item) => {
+
+        if (item.number === number) {
+            return true;
+
+        } else {
+            return false;
+        }
+    });
+
+    console.log("Candidate", candidate);
 };
 
 function clicked(num) {
