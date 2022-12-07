@@ -7,12 +7,15 @@ const numbers = document.querySelector('.numbers');
 
 let currentPhase = 0;
 let number = '';
+let blankVote = false;
 
 function phaseInit() {
 
-    number = '';
     let phase = phases[currentPhase];
     let numberHtml = '';
+
+    number = '';
+    blankVote = false;
 
     for (let i = 0; i < phase.numbers; i++) {
 
@@ -95,7 +98,16 @@ function clicked(num) {
 };
 
 function empty() {
-    alert("Clicou em branco");
+
+    if (number === '') {
+        
+        blankVote = true;
+
+        yourVoteFor.style.display = 'block';
+        warning.style.display = 'block';
+        numbers.innerHTML = '';
+        description.innerHTML = '<div class="big--warning blink">VOTO EM BRANCO</div>';
+    }
 };
 
 function correct() {
