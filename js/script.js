@@ -8,6 +8,7 @@ const numbers = document.querySelector('.numbers');
 let currentPhase = 0;
 let number = '';
 let blankVote = false;
+let votes = [];
 
 function phaseInit() {
 
@@ -128,12 +129,18 @@ function confirm() {
     if (blankVote === true) {
 
         confirmedVote = true;
-        console.log("Confirmando como BRANCO...");
+        votes.push({
+            phase: phases[currentPhase].title,
+            vote: 'empty'
+        });
 
     } else if (number.length === phase.numbers) {
 
         confirmedVote = true;
-        console.log("Confirmando como "+number);
+        votes.push({
+            phase: phases[currentPhase].title,
+            vote: number
+        });
     }
 
     if (confirmedVote) {
@@ -146,6 +153,7 @@ function confirm() {
         } else {
 
             document.querySelector('.screen').innerHTML = '<div class="bigger--warning blink">FIM!</div>';
+            console.log(votes);
         }
     }
 };
