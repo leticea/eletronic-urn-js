@@ -2,7 +2,7 @@ const yourVoteFor = document.querySelector('.text span');
 const role = document.querySelector('.role span');
 const description = document.querySelector('.description');
 const warning = document.querySelector('.bottom-side');
-const photos = document.querySelector('.top-side-right');
+const images = document.querySelector('.top-side-right');
 const numbers = document.querySelector('.numbers');
 
 let currentPhase = 0;
@@ -30,7 +30,7 @@ function phaseInit() {
     role.innerHTML = phase.title;
     description.innerHTML = '';
     warning.style.display = 'none';
-    photos.innerHTML = '';
+    images.innerHTML = '';
     numbers.innerHTML = numberHtml;
 };
 
@@ -57,7 +57,12 @@ function screenUpdate() {
 
         let photosHtml = '';
 
-        photos.innerHTML = photosHtml;
+        for (let i in candidate.photos) {
+
+            photosHtml += `<div class="image"><img src="images/${candidate.photos[i].url}" alt="">${candidate.photos[i].subtitle}</div>`;
+        }
+
+        images.innerHTML = photosHtml;
     }
 };
 
