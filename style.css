@@ -68,6 +68,15 @@ body {
 
 .top-side {
     flex: 1;
+    display: flex;
+}
+
+.top-side-left {
+    flex: 1;
+}
+
+.top-side-right {
+    width: 90px;
 }
 
 .bottom-side {
