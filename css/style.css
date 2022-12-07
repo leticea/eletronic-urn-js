@@ -112,11 +112,11 @@ body {
     font-size: 25px;
 }
 
-/*.blink {
+.blink {
     animation-name: blink;
     animation-duration: 1s;
     animation-iteration-count: infinite;
-}*/
+}
 
 .description {
     flex: 1;

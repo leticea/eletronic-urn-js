@@ -14,8 +14,16 @@ function phaseInit() {
     let phase = phases[currentPhase];
     let numberHtml = '';
 
-    for(let i = 0; i < phase.numbers; i++) {
-        numberHtml += '<div class="number"></div>';
+    for (let i = 0; i < phase.numbers; i++) {
+
+        if (i === 0) {
+
+            numberHtml += '<div class="number blink"></div>';
+
+        } else {
+
+            numberHtml += '<div class="number"></div>';
+        }
     };
 
     yourVoteFor.style.display = 'none';
@@ -34,10 +42,21 @@ function clicked(num) {
 
     let numberElement = document.querySelector('.number.blink');
 
-    if (numberElement != null) {
+    if (numberElement !== null) {
 
         numberElement.innerHTML = num;
         number = `${number}${num}`;
+
+        numberElement.classList.remove('blink');
+
+        if (numberElement.nextElementSibling !== null) {
+
+            numberElement.nextElementSibling.classList.add('blink');
+
+        } else {
+
+            screenUpdate();
+        }
     }
 }
 
