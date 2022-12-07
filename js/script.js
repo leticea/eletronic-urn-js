@@ -63,6 +63,13 @@ function screenUpdate() {
         }
 
         images.innerHTML = photosHtml;
+
+    } else {
+
+        yourVoteFor.style.display = 'block';
+        warning.style.display = 'block';
+        description.innerHTML = '<div class="big--warning blink">VOTO NULO</div>';
+
     }
 };
 
